@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- head
+
+        Purpose:
+        - Title used here shows up in the browser tab
+        - Link to the favicon (small image that appears in the browser tab)
+        - Link to the CSS file (used to style the webpage)
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) (favicon)
+        - [ ] Any time after
+        -->
+
+        <title>TechNova</title>
+        <link rel="icon" href="Images/Fav1.jpg.png">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Style rules go here. */
+            body{
+                background-color:#d5ebf3;
+            }
+            button{
+                background-color:#85c1d5; 
+                color: rgb(36, 41, 89);
+                font-size:16px;
+                padding: 5px 12px;
+                border: none;
+                border-radius:5px;
+                cursor: pointer;
+            }
+        </style>
+
+    </head>
+    
+    <body>
+
+    <div class="header-container">
+        <div class="header-item">
+            <h1>TechNova</h1>
+        </div>
+
+        <div class="header-item">
+            <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#event">Event</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><button type="button" id="theme-button">Toggle Dark Mode</button></li>
+            </ul>
+            </nav>
+        </div>
+    </div>
+
+         
+     <main>
+       <!--
+        Purpose:
+        - Main header section of the webpage
+        - Contains the title, subtitle, image, and key buttons for the webpage
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 3 (REQUIRED FEATURE) 
+        - [ ] Project 4 (REQUIRED FEATURE) 
+        - [ ] Any time after
+        -->
+       
+        <h2 id="mainh2">Tools and Practice for Better, Faster, Easier Debugging</h2>
+
+        <button type="button">Sign Up</button>
+        <button type="button">Project Guidelines</button>
+
+        
+        <!-- about
+
+        Purpose:
+        - Section for general info about the event
+        - Contains a video, description, and key points about the event
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 2 (STRETCH FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        --> 
+        <h2 id="about">About the Event</h2>
+
+        <div class="about-container">
+        <!-- Adding a video  -->
+        <video controls autoplay muted src="Welcome.mp4" type="video/mp4" width="35%" height="auto"></video>
+        <div class="about-description">
+            <h3>Debugging Workshop</h3>
+            <p>Join us for an interactive workshop designed to help you debug smarter, not harder! Whether you're a beginner or an experienced developer, this event will provide you with practical tools and strategies to tackle bugs efficiently.</p>   
+        <p> Software often breaks in ways that aren't obvious, and debugging under tight deadlines can be one of the most frustrating 
+            parts of coding. Whether you're struggling with runtime errors, hidden logic flaws, or just want to stop "guess-and -check" debugging,
+            this session is for you.
+        </p>
+        <p>
+            Join us as we explore practical tools and proven techniques that help developers debug smarter and faster. You will lwaen how to use 
+            breakpoints, stack traces, IDE tools, print-debugging strategies, and more-whether you're using Java, Python, or web technologies. Bring
+            your laptop, your curiosity, and your buggy code!
+        </p>
+        </div>
+        </div>
+        
+        
+        <h3 >What to Expect</h3>
+        <h4> Debug smarter, not harder --tools & strategies that save time and build confidence</h4>
+        <ul>
+            <li> <b>Understand Your Errors:</b> <i>Your  Learn how to identify and interpret runtime and logic errors quickly and clearly.</i></li>
+            <li> <b>Master Your Tools:</b> <i>Discover debugging features in popular IDEs like IntelliJ, VS Code, and Eclipse that can help you step through code and inspect variables in real time.</i></li>
+            <li> <b>Develop Efficient Habits:</b> <i>Build a personal debugging workflow that minimizes time spent stuck and maximizes problem-solving efficiency.</i></li>
+        </ul>
+        
+
+        <!-- schedule
+
+        Purpose:
+        - Section for specific info about the event's schedule
+        - Contains images and descriptions of each activity
+
+        When To Modify:
+        - [ ] Project 2 (REQUIRED FEATURE) 
+        - [ ] Project 4 (STRETCH FEATURE) 
+        - [ ] Any time between / after
+        -->
+
+
+    <section class="event-container">
+        <h2 class="event-title"id="event">Event Schedule</h2>
+
+        <div class="event-item-location">
+            <img class="image" src="Images/University.jpg" alt="University Picture" />
+            <p>
+                In-person: Student Center Building, Room-120 <br>
+                <span class="virtual-link">Virtual: Zoom link</span>
+           </p>
+        </div>
+     
+
+       <div class="event-item-parts">
+
+            <div class="event-item">
+                <img class="image" src="Images/meeting.png" alt="Group meeting" />
+                <div class="event-description">
+                <h3>Friday Evening - Introduction & Debugging Mindset</h3>
+                <p>Kick off the workshop with an overview of common software bugs and real-world examples. Learn why debugging is a core skill every developer needs and how to build a problem-solving mindset.</p>
+                 </div>
+            </div>
+            
+
+            <div class="event-item">
+                <img class="image" src="Images/GroupWork.png" alt="Students working on project" />
+                <div class="event-description">
+                <h3>Saturday Evening - Hands-On Debugging Practice</h3>
+                <p>Work in small groups to identify and fix bugs in sample Java, Python, or HTML/JS files. You'll use breakpoints, print statements, and debugging tools inside IDEs like VS Code and IntelliJ to solve real coding challenges.</p>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <img class="image" src="Images/monitor.png" alt="Monitor displaying functioning code" />
+                <div class="event-description">
+                <h3>Final Round - Live Demo & Q&A</h3>
+                <p>Watch a live debugging demo where a bug is tackled step-by-step—from error message to resolution. Ask questions, share tips, and leave with best practices for debugging smarter and faster.</p>
+            </div>
+     </div>
+
+    </section>
+
+
+                    
+        <!-- rsvp
+
+Purpose:
+- Section for users to sign up for the event
+- Contains a form for users to input their information, 
+and a list of other users who have signed up
+
+When To Modify:
+- [ ] Project 6 (REQUIRED FEATURE) 
+- [ ] Project 6 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+     <div id="rsvp">
+        <h2>RSVP</h2>
+        
+        <div class="rsvp-container">
+             <div class="rsvp-para">
+                <p>We are excited to have you join us for the Debugging Workshop! Please fill out the form below to RSVP and let us know you're coming.</p>
+                <p>Once you submit your RSVP, you'll be added to the list of attendees.</p>
+                <p> We look forward to seeing you there!</p>
+             </div>
+             <div class="rsvp-participants">
+                <p>⭐ Mysha from Minnesota is joining the squad.</p>
+                <p>⭐ John from California is joining the squad.</p>
+                <p>⭐ Jane from New York is joining the squad.</p>
+                <p id="rsvp-count">🔥 3 people have RSVP'd to this event! </p>
+
+             </div>
+        </div>
+
+        <!-- Sign RSVP Form -->
+        <div class="rsvp-container">
+             <form id="rsvp-form" title="rsvp-form" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="state">Home State:</label>
+                <input type="text" id="state"  required>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email"  required>
+
+                <!-- submit button -->
+                <button type="submit" id="submitBtn">Submit RSVP</button>
+            </form>
+       </div>
+      </div>
+        
+        
+
+
+    
+        <h2 id="links">Links</h2>
+        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
+        <a class="block" href="https://engage.metrostate.edu/?_gl=1*1ovtazb*_gcl_aw*R0NMLjE3NDg0NTg0NzAuQ2p3S0NBanc2TnJCQmhCNkVpd0F2blRfcnVQQVBseTVzNHljX1hJZ2VaN0JlX3FXdzliaUwzWXFHTGxnSk1tSG1vR2hxa0prQUJtR3FCb0NMdU1RQXZEX0J3RQ..*_gcl_au*MTYyNzE1MDE1Ny4xNzQ1NzcxNzQ4*_ga*OTQ1MjE5NzEzLjE3MjkwMTc1NTY.*_ga_RW97W5PM5Z*czE3NTIwMjg1ODkkbzQ3JGcwJHQxNzUyMDI4NTg5JGo2MCRsMCRoMA.."
+        target="_blank">
+            <article>
+                <h3 class="linkh3">Engage.MetroState</h3>
+                <p>Engage is Metro State University's official platform for exploring student clubs,
+                    events, and leadership opportunities. It helps students stay connected, get involved, and
+                    access important campus resources. Log in with your StarID to start participating today!</p>
+            </article>
+        </a>
+        <a class="block" href="https://discord.gg/cGGhdRMEHK" target="_blank">
+            <article>
+                <h3 class="linkh3">Discord</h3>
+                <p>Discord as the  main platform for club communication, event coordination, project collaboration, and casual hangouts.
+                    Join our server to stay connected with members, get updates, and participate in real-time discussions.</p>
+            </article>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
+        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+        
+         Connect:<a href="https://www.instagram.com/metrostate? ">Instagram</a><br>
+         Contact: <a href="mailto:hh4402bv@go.minnstate.edu">TechNova@go.minnstate.edu</a><br>
+         &copy; 2025 MSU Club
+   </footer>
+
+   <script src="index.js"></script>
+</body>
+</html>
