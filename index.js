@@ -34,22 +34,22 @@ let count = 3;
 
 
 //Function that will add the participant
-const addParticipant = (event) => {
+const addParticipant = (event, person) => {
 
     event.preventDefault(); //prevent  page reload
 
-    //get the input values
-    const participantName  = document.getElementById("name").value;
-    const participantState = document.getElementById("state").value;
-    const participantEmail = document.getElementById("email").value;
+    //get the input values (not needed)
+    // const participantName  = document.getElementById("name").value;
+    // const participantState = document.getElementById("state").value;
+    // const participantEmail = document.getElementById("email").value;
 
     //create a new <p> element
-    const newPara = document.createElement("p");
+    const newParticipant = document.createElement("p");
     //set the text of the new <p> 
-    newPara.textContent = `⭐  ${participantName} from ${participantState} is joining the squad.`;
+    newParticipant.textContent = `⭐  ${person.name} from ${person.state} is joining the squad.`;
     //append the new <p> to the participants list
     const participantList = document.querySelector(".rsvp-participants");
-    participantList.appendChild(newPara);
+    participantList.appendChild(newParticipant);
 
      // First, remove the old count
     const oldCount = document.getElementById("rsvp-count");
@@ -92,6 +92,13 @@ const validateForm = (event) => {
 
   let containsErrors = false;
   var rsvpInputs = document.getElementById("rsvp-form").elements;
+
+  //Adding the new Obj variable person with appropriate properties
+  let person = {
+    name : rsvpInputs[0].value,
+    state : rsvpInputs[1].value,
+    email : rsvpInputs[2].value,
+  }
   // TODO: Loop through all inputs
   for( let i=0; i<3; i++ ) {
     const input = rsvpInputs[i];
@@ -100,7 +107,7 @@ const validateForm = (event) => {
     input.classList.remove("error");
     // TODO: Inside loop, validate the value of each input
     if(value.length <2){
-        input.classList.add("error");
+        input.classList.add("error");   //highlights the input field with an error
         containsErrors = true;
         continue;    // skips the rest of the loop for this input & moves to the next iteration
     }
@@ -115,7 +122,8 @@ const validateForm = (event) => {
   }
 
   // TODO: If no errors, call addParticipant() and clear fields
-  addParticipant(event);
+  addParticipant(event, person);
+  toggleModal(person);
   document.getElementById("rsvp-form").reset();
 
 };
@@ -126,4 +134,65 @@ newSubmit.addEventListener("click", validateForm);
 
 
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+
+/*** Modal ***
+  
+  Purpose:
+  - Use this starter code to add a pop-up modal to your website.
+***/
+
+const modal = document.getElementById("success-modal"); //Global variable
+
+const toggleModal = (person) => {
+    
+    // TODO: Update modal display to flex
+     modal.style.display ="flex";
+     let modalText = document.getElementById("modal-text");
+    // TODO: Update modal text to personalized message
+     modalText.innerHTML =
+     `✅ Reservation confirmed,<br><b>${person.name}</b>! <br>
+      🎉 We can't wait to see you there
+      🧠 Get ready to learn, connect, and have fun!`
+
+    let intervalID = setInterval(animateImage, 500);
+   // Set modal timeout to 5 seconds
+   setTimeout(() => {
+    //TODO: Update modal display to none
+    modal.style.display ="none";
+    clearInterval(intervalID);
+   }, 5000);
+
+   
+  }
+
+// TODO: animation variables and animateImage() function
+let rotateFactor = 0;
+const modalImage  = document.getElementById("modal-image");
+const animateImage = () => {
+  if (!motionEnabled) return;
+  rotateFactor = rotateFactor === 0 ? -4 : 0;
+  modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+}
+
+//Add a button that closes the modal
+const closeModelBtn = document.getElementById("modal-closeBtn");
+const closeModel =() => {
+  modal.style.display = "none";
+  }
+closeModelBtn.addEventListener("click", closeModel);
+
+//Add a Reduce Motion option to your site
+const motionButton = document.getElementById("motion-button");
+let motionEnabled  = true;
+
+const reduceMotion =() => { 
+  motionEnabled = !motionEnabled;  //toggle true/False
+
+  //update the button label based on state
+  motionButton.textContent = motionEnabled ? "Reduce Motion" : "Enable Motion";
+ if(!motionEnabled){
+  modalImage.style.transform = `rotate(0deg)`;
+ }
+}
+//Add Event Listener
+motionButton.addEventListener("click", reduceMotion);
